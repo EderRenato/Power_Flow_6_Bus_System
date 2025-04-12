@@ -1,0 +1,8 @@
+Start Bus, End Bus, Branch Impedance, Transformer Tap
+1, 6, 0.230+0.518j, None
+1, 4, 0.080+0.370j, None
+4, 6, 0.097+0.407j, None
+5, 2, 0.282+0.640j, None
+2, 3, 0.723+1.050j, None
+6, 5, 0.000+0.300j, 1.025
+4, 3, 0.000+0.133j, 1.1
