@@ -1,3 +1,10 @@
+"""
+Newton-Raphson Power Flow Analysis
+Created on Wed May  25 2025
+
+@author: Ronaldo César
+"""
+
 import numpy as np
 import pandas as pd
 import time
@@ -71,11 +78,11 @@ pq = [2, 3, 4, 5]
 # =============================
 # Execução do fluxo
 # =============================
-start_time = time.time()
+start_time = time.process_time()
 V, converged, iterations = gauss_seidel_pf(Ybus, Sbus, V0, ref, pv, pq)
-end_time = time.time()
+end_time = time.process_time()
 processing_time = end_time - start_time
-print(f"\nTempo de processamento até a convergência: {processing_time:.9f} segundos.")
+print(f"\nTempo de processamento até a convergência: {processing_time*1000:.9f} ms.")
 if converged:
     print("\nTensões finais:")
     for idx, v in enumerate(V):

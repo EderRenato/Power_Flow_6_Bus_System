@@ -1,7 +1,7 @@
-Bus no, Bus Type, Voltage Active, Voltage Reactive, Load Active, Load Reactive, Gen Active, Gen Reactive
-1, None, 1.1, 0, 0, 0, 0.937, 0.419
-2, None, 1.149, -0.537, 0, 0, 0.500, 0.137
-3, None, 1.013, -0.205, 0.550, 0.130, 0, 0
-4, None, 0.986, -0.152, 0, 0, 0, 0.050
-5, None, 0.995, -0.193, 0.300, 0.180, 0, 0
-6, None, 0.962, -0.185, 0.500, 0.050, 0, 0.055
+Bus no, Bus Type, Voltage, Angle, Load Active, Load Reactive, Gen Active, Gen Reactive
+1, Slack, 1.05, 0, 0, 0, 0, 0
+2, PV, 1.1, 0, 0, 0, 0.500, 0
+3, PQ, 1, 0, 0.550, 0.130, 0, 0
+4, PQ, 1, 0, 0, 0, 0, 0
+5, PQ, 1, 0, 0.300, 0.180, 0, 0
+6, PQ, 1, 0, 0.500, 0.050, 0, 0
