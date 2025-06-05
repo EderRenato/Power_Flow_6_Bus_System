@@ -277,7 +277,7 @@ def newton_raphson_power_flow(buses, lines, max_iterations=100, tolerance=1e-3):
     iteration = 0
     max_mismatches = []
     
-    start_time = time.process_time()
+    start_time = time.time()
     while iteration < max_iterations and not converged:
         iteration += 1
         
@@ -326,7 +326,7 @@ def newton_raphson_power_flow(buses, lines, max_iterations=100, tolerance=1e-3):
                 new_voltage = buses[bus_idx].voltage_amplitude + delta_V[i]
                 # Limitar tensão entre 0.5 e 1.5 pu
                 buses[bus_idx].voltage_amplitude = max(0.5, min(1.5, new_voltage))
-    end_time = time.process_time()
+    end_time = time.time()
     processing_time = end_time - start_time
     print(f"\nTempo de processamento até a convergência: {processing_time*1000:.9f} ms.")
     return converged, iteration, max_mismatches
@@ -432,7 +432,7 @@ try:
     print(f"Tipos de barras: {dict(zip(range(1, len(buses)+1), bus_types))}")
     
     # Resolver fluxo de potência
-    converged, iterations, max_mismatches = newton_raphson_power_flow(buses, lines, tolerance=1e-4)
+    converged, iterations, max_mismatches = newton_raphson_power_flow(buses, lines, tolerance=1e-4, max_iterations=1e5)
     Ybus = build_ybus(buses, lines)  # Recalcular Ybus para exibir no final
     # Imprimir resultados (incluindo cálculo de P e Q da barra slack)
     print_final_results(buses, converged, iterations, Ybus)

@@ -78,9 +78,9 @@ pq = [2, 3, 4, 5]
 # =============================
 # Execução do fluxo
 # =============================
-start_time = time.process_time()
+start_time = time.time()
 V, converged, iterations = gauss_seidel_pf(Ybus, Sbus, V0, ref, pv, pq)
-end_time = time.process_time()
+end_time = time.time()
 processing_time = end_time - start_time
 print(f"\nTempo de processamento até a convergência: {processing_time*1000:.9f} ms.")
 if converged:
